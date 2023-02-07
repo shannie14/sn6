@@ -8,73 +8,92 @@ import Header from "../visuals/Header";
 import { useTheme } from "@mui/material";
 
 
-const Camparicampaigns = () => {
-
+function Jeffersonsbottles() {
   const columns = [
-        {
-            field: "campaign", 
-            headerName: "CAMPAIGN", 
-            flex: 1,
-            minWidth: 200},
-  
-        {
-            field: "live", 
-            headerName: "LAUNCH",
-            flex: 1,
-        },
-        {
-            field: "imp_total", 
-            headerName: "IMPRESSIONS",
-            flex: 1,
-        },
-        {
-            field: "view_total", 
-            headerName: "VIEWS",
-            flex: 1,
-        },
-        {
-            field: "signup", 
-            headerName: "SIGN-UPS",
-            flex: 1,
-        },
+    {
+      field: "product",
+      headerName: "PRODUCT",
+      flex: 1,
+      minWidth: 200
+    },
+
+    {
+      field: "unitsT",
+      headerName: "ALL UNITS SOLD",
+      flex: 1,
+    },
+    {
+      field: "salesT",
+      headerName: "ALL SALES",
+      flex: 1,
+    },
+    {
+      field: "units23",
+      headerName: "2023",
+      flex: 1,
+    },
+    {
+      field: "sales23",
+      headerName: "",
+      flex: 1,
+    },
+    {
+      field: "units22",
+      headerName: "2022",
+      flex: 1,
+    },
+    {
+      field: "sales22",
+      headerName: "",
+      flex: 1,
+    },
+    {
+      field: "units21",
+      headerName: "2021",
+      flex: 1,
+    },
+    {
+      field: "sales21",
+      headerName: "",
+      flex: 1,
+    },
   ];
 
 
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
 
-    const [brands, setBrands] = useState([])
+  const [sales, setSales] = useState([])
 
-    //occurs after render
-    useEffect(() => {
-        const fetchBrands= async () => {
-            //initiate HTTP request
-            const response = await fetch('/campaigns/campari')
-            const json = await response.json()
+  useEffect(() => {
+    const fetchSales = async () => {
 
-            const formattedBrands = json.map(brand => {
-              for (const [key, value] of Object.entries(brand)) {
-                if (typeof value ==='number'){
-                  brand[key] = value.toLocaleString();
-                }
-              }
-              return brand;
-            })
+      const response = await fetch('/sales/jeffersons')
+      const json = await response.json()
 
-            if (response.ok) {
-              setBrands(formattedBrands)
-            }
+      const formattedBrands = json.map(brand => {
+        for (const [key, value] of Object.entries(brand)) {
+          if (typeof value === 'number') {
+            brand[key] = value.toLocaleString();
           }
+        }
+        return brand;
+      })
 
-        fetchBrands()
-    }, []);
+      if (response.ok) {
+        setSales(formattedBrands)
+      }
+    }
 
-    
+    fetchSales()
+
+  }, []);
+
   return (
     <Box m="20px">
       <Box
         m="40px 0 0 0"
-        height="30vh"
+        height="50vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -82,7 +101,7 @@ const Camparicampaigns = () => {
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
             fontSize: "16px",
-            
+
           },
           "& .name-column--cell": {
             color: colors.greenAccent[300],
@@ -110,7 +129,7 @@ const Camparicampaigns = () => {
       >
         <DataGrid
           getRowId={(row) => row._id}
-          rows={brands}
+          rows={sales}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />
@@ -119,4 +138,5 @@ const Camparicampaigns = () => {
   );
 };
 
-export default Camparicampaigns;
+
+export default Jeffersonsbottles;

@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
-import {tokens} from "../theme";
+import { tokens } from "../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import LiquorIcon from '@mui/icons-material/Liquor';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import "react-pro-sidebar/dist/css/styles.css";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
@@ -117,22 +119,85 @@ const Sidebar = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
+              Clubs
+            </Typography>
+            <Item
+              title="Bottle of the Month"
+              to="/BOTM"
+              icon={<LiquorIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Whiskey Wash"
+              to="/Washs"
+              icon={<LiquorIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
               Brands
             </Typography>
             <Item
               title="Bacardi"
               to="/Bacardi"
-              icon={<HomeOutlinedIcon />}
+              icon={<ArrowDropUpIcon fontSize="small" />}
               selected={selected}
               setSelected={setSelected}
-            />           
-                        <Item
+            />
+            <Item
+              title="Campari"
+              to="/Campari"
+              icon={<ArrowDropUpIcon fontSize="small" />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Diageo"
+              to="/Diageo"
+              icon={<ArrowDropUpIcon fontSize="small" />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
               title="Goslings"
               to="/Goslings"
-              icon={<HomeOutlinedIcon />}
+              icon={<ArrowDropUpIcon fontSize="small" />}
               selected={selected}
               setSelected={setSelected}
-            />      
+            />
+            <Item
+              title="Jeffersons"
+              to="/Jeffersons"
+              icon={<ArrowDropUpIcon fontSize="small" />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Maestro Dobel"
+              to="/Dobel"
+              icon={<ArrowDropUpIcon fontSize="small" />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Royal Salute"
+              to="/Royalsalute"
+              icon={<ArrowDropUpIcon fontSize="small" />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Waterford"
+              to="/Waterford"
+              icon={<ArrowDropUpIcon fontSize="small" />}
+              selected={selected}
+              setSelected={setSelected}
+            />
           </Box>
         </Menu>
       </ProSidebar>

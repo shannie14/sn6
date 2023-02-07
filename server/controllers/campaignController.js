@@ -37,6 +37,15 @@ const getCampari = async (req, res) => {
         .json(campari)
 }
 
+//Diageo
+const getDiageo = async (req, res) => {
+
+    const Diageo = await Campaign.find({ client: 'Diageo' })
+
+    res.status(200)
+        .json(Diageo)
+}
+
 //Goslings
 const getGoslings = async (req, res) => {
 
@@ -46,10 +55,72 @@ const getGoslings = async (req, res) => {
         .json(goslings)
 }
 
+//Jeffersons
+const getJeffersons = async (req, res) => {
+
+    const jeffersons = await Campaign.find({ client: 'Jeffersons (Pernod Ricard)' })
+
+    res.status(200)
+        .json(jeffersons)
+}
+
+//Dobel
+const getDobel = async (req, res) => {
+
+    const dobel = await Campaign.find({ client: 'Maestro Dobel' })
+
+    res.status(200)
+        .json(dobel)
+}
+
+//Stranahans
+const getStranahans = async (req, res) => {
+
+    const stranahans = await Campaign.find({ client: 'Stranahans' })
+
+    res.status(200)
+        .json(stranahans)
+}
+
+//Royalsalute
+const getRoyalsalute = async (req, res) => {
+
+    const royalsalute = await Campaign.find({ client: 'Royal Salute' })
+
+    res.status(200)
+        .json(royalsalute)
+}
+
+//Waterford
+const getWaterford = async (req, res) => {
+
+    const waterford = await Campaign.find({ client: 'Waterford' })
+
+    res.status(200)
+        .json(waterford)
+}
+
+//Whiskey Wash
+const getWash = async (req, res) => {
+
+    const wash = await Campaign.find({ client: 'wash' })
+
+    res.status(200)
+        .json(wash)
+}
+
 module.exports = {
     getCampaign,
     getCampaigns,
-    getGoslings,
-    getCampari,
     getBacardi,
+    getCampari,
+    getDiageo,
+    getGoslings,
+    getJeffersons,
+    getDobel,
+    getStranahans,
+    getRoyalsalute,
+    getWaterford,
+    getWash,
+
 }
