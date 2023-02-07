@@ -36,7 +36,7 @@ const getGoslingsSales = async (req, res) => {
 
 
 //Bacardi
-const getBacardiSales = async (req, res) => {
+const getBacardi = async (req, res) => {
 
     const bacardi = await Sale.find({ brand: 'bacardi' })
 
@@ -44,10 +44,20 @@ const getBacardiSales = async (req, res) => {
         .json(bacardi)
 }
 
+//Campari
+const getCampari = async (req, res) => {
+
+    const campari = await Sale.find({ brand: 'campari' })
+
+    res.status(200)
+        .json(campari)
+}
+
 module.exports = {
     getSale,
     getSales,
+    getCampari,
     getGoslings,
     getGoslingsSales,
-    getBacardiSales,
+    getBacardi,
 }

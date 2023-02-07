@@ -7,6 +7,7 @@ import { ColorModeContext, useMode } from "./theme";
 import Home from '../src/pages/Home'
 import Brandlist from '../src/pages/brand'
 import Bacardi from '../src/pages/Bacardi'
+import Campari from '../src/pages/Campari'
 import Goslings from '../src/pages/Goslings'
 import Sidebar from '../src/components/Sidebar'
 import Topbar from '../src/components/Topbar'
@@ -28,6 +29,7 @@ function App() {
               <Route path="/brand" element={<Brandlist />} />
               <Route path="/Bacardi" element={<Bacardi />} />
               <Route path="/Goslings" element={<Goslings />} />
+              <Route path="/Campari" element={<Campari />} />
             </Routes>
           </main>
         </div>
