@@ -28,12 +28,11 @@ const getGoslings = async (req, res) => {
         .json(goslings)
 }
 
-const getGoslingsSales = async (req, res) => {
-    const GSales = await Sale.find({ product: 'GOSLINGS' })
-    res.status(200)
-        .json(GSales)
-}
-
+// const getGoslingsSales = async (req, res) => {
+//     const GSales = await Sale.find({ product: 'GOSLINGS' })
+//     res.status(200)
+//         .json(GSales)
+// }
 
 //Bacardi
 const getBacardi = async (req, res) => {
@@ -53,11 +52,79 @@ const getCampari = async (req, res) => {
         .json(campari)
 }
 
+//Diageo
+const getDiageo = async (req, res) => {
+
+    const diageo = await Sale.find({ brand: 'diageo' })
+
+    res.status(200)
+        .json(diageo)
+}
+
+//Jeffersons
+const getJeffersons = async (req, res) => {
+
+    const jeffersons = await Sale.find({ brand: 'jeffersons' })
+
+    res.status(200)
+        .json(jeffersons)
+}
+
+//Dobel
+const getDobel = async (req, res) => {
+
+    const dobel = await Sale.find({ brand: 'dobel' })
+
+    res.status(200)
+        .json(dobel)
+}
+
+//Stranahans
+const getStranahans = async (req, res) => {
+
+    const stranahans = await Sale.find({ brand: 'stranahans' })
+
+    res.status(200)
+        .json(stranahans)
+}
+
+//Royalsalute
+const getRoyalsalute = async (req, res) => {
+
+    const royalsalute = await Sale.find({ brand: 'royal' })
+
+    res.status(200)
+        .json(royalsalute)
+}
+
+//Waterford
+const getWaterford = async (req, res) => {
+
+    const waterford = await Sale.find({ brand: 'waterford' })
+
+    res.status(200)
+        .json(waterford)
+}
+
+//Wash
+const getWash = async (req, res) => {
+
+    const wash = await Sale.find({ brand: 'wash' })
+
+    res.status(200)
+        .json(wash)
+}
 module.exports = {
     getSale,
     getSales,
-    getCampari,
-    getGoslings,
-    getGoslingsSales,
     getBacardi,
+    getCampari,
+    getDiageo,
+    getGoslings,
+    getJeffersons,
+    getDobel,
+    getStranahans,
+    getRoyalsalute,
+    getWaterford,
+    getWash,
 }

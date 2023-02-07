@@ -3,7 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const brandEndpoints = require('./routes/brandRoutes');
+// const brandEndpoints = require('./routes/brandRoutes');
 const saleEndpoints = require('./routes/saleRoutes')
 const campaignEndpoints = require('./routes/campaignRoutes')
 
@@ -30,7 +30,7 @@ mongoose.connect(process.env.MONGO_URI)
     })
 
 //endpoints
-app.use('/brands', brandEndpoints)
+// app.use('/brands', brandEndpoints)
 app.use('/sales', saleEndpoints)
 app.use('/campaigns', campaignEndpoints)
 

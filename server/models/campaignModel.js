@@ -7,6 +7,9 @@ const CampaignSchema = new mongoose.Schema({
     campaign: {
         type: String,
     },
+    date: {
+        type: String,
+    },
     live: {
         type: String,
     },
@@ -44,7 +47,7 @@ const CampaignSchema = new mongoose.Schema({
 
 
 // Mongoose automatically looks for the plural, lowercased version of your model name (1st argument)
-const Campaign = mongoose.model('campaign', CampaignSchema);
+const Campaign = mongoose.model('campaigns', CampaignSchema);
 
 
 

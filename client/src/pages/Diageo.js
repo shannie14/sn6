@@ -4,10 +4,10 @@ import { tokens } from "../theme";
 
 
 //page components
-import Bacardibottles from "../components/Brands/Bacardibottles";
-import Bacardicampaigns from "../components/Brands/Bacardicampaigns";
+import Diageobottles from "../components/Brands/Diageobottles";
+import Diageocampaigns from "../components/Brands/Diageocampaigns";
 // import MainCard from "../components/visuals/MainCard"
-import Bacardicard from "../components/Brands/Bacardicard"
+import Diageocard from "../components/Brands/Diageocard"
 
 //architecture
 import { Box, useTheme } from "@mui/material";
@@ -15,7 +15,7 @@ import { Box, useTheme } from "@mui/material";
 
 
 //functiionality
-const Bacardi = () => {
+const Diageo = () => {
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -27,10 +27,10 @@ const Bacardi = () => {
 
             {/* HEADER */}
             <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Header title="Bacardi" />
+                <Header title="Diageo" />
             </Box>
 
-            <Bacardicard />
+            <Diageocard />
 
             <Box
                 gridColumn="span 12"
@@ -38,8 +38,8 @@ const Bacardi = () => {
 
                 overflow="auto">
 
-                <Bacardicampaigns />
-                <Bacardibottles />
+                <Diageocampaigns />
+                <Diageobottles />
 
             </Box>
         </Box>
@@ -49,4 +49,4 @@ const Bacardi = () => {
     );
 };
 
-export default Bacardi;
+export default Diageo;

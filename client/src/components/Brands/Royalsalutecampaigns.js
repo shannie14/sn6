@@ -8,68 +8,69 @@ import Header from "../visuals/Header";
 import { useTheme } from "@mui/material";
 
 
-const Bacardicampaigns = () => {
+const Royalsalutecampaigns = () => {
 
   const columns = [
-        {
-            field: "campaign", 
-            headerName: "CAMPAIGN", 
-            flex: 1,
-            minWidth: 200},
-  
-        {
-            field: "live", 
-            headerName: "LAUNCH",
-            flex: 1,
-        },
-        {
-            field: "imp_total", 
-            headerName: "IMPRESSIONS",
-            flex: 1,
-        },
-        {
-            field: "view_total", 
-            headerName: "VIEWS",
-            flex: 1,
-        },
-        {
-            field: "signup", 
-            headerName: "SIGN-UPS",
-            flex: 1,
-        },
+    {
+      field: "campaign",
+      headerName: "CAMPAIGN",
+      flex: 1,
+      minWidth: 200
+    },
+
+    {
+      field: "live",
+      headerName: "LAUNCH",
+      flex: 1,
+    },
+    {
+      field: "imp_total",
+      headerName: "IMPRESSIONS",
+      flex: 1,
+    },
+    {
+      field: "view_total",
+      headerName: "VIEWS",
+      flex: 1,
+    },
+    {
+      field: "signup",
+      headerName: "SIGN-UPS",
+      flex: 1,
+    },
   ];
 
 
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
 
-    const [brands, setBrands] = useState([])
+  const [brands, setBrands] = useState([])
 
-    //occurs after render
-    useEffect(() => {
-        const fetchBrands= async () => {
-            //initiate HTTP request
-            const response = await fetch('/campaigns/bacardi')
-            const json = await response.json()
+  //occurs after render
+  useEffect(() => {
+    const fetchBrands = async () => {
+      //initiate HTTP request
+      const response = await fetch('/campaigns/royalsalute')
+      const json = await response.json()
 
-            const formattedBrands = json.map(brand => {
-              for (const [key, value] of Object.entries(brand)) {
-                if (typeof value ==='number'){
-                  brand[key] = value.toLocaleString();
-                }
-              }
-              return brand;
-            })
-
-            if (response.ok) {
-              setBrands(formattedBrands)
-            }
+      const formattedBrands = json.map(brand => {
+        for (const [key, value] of Object.entries(brand)) {
+          if (typeof value === 'number') {
+            brand[key] = value.toLocaleString();
           }
+        }
+        return brand;
+      })
 
-        fetchBrands()
-    }, []);
+      if (response.ok) {
+        setBrands(formattedBrands)
+      }
+    }
 
-    
+    fetchBrands()
+  }, []);
+
+
   return (
     <Box m="20px">
       <Box
@@ -82,7 +83,7 @@ const Bacardicampaigns = () => {
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
             fontSize: "16px",
-            
+
           },
           "& .name-column--cell": {
             color: colors.greenAccent[300],
@@ -111,6 +112,7 @@ const Bacardicampaigns = () => {
         <DataGrid
           getRowId={(row) => row._id}
           rows={brands}
+
           columns={columns}
           components={{ Toolbar: GridToolbar }}
         />
@@ -119,4 +121,4 @@ const Bacardicampaigns = () => {
   );
 };
 
-export default Bacardicampaigns;
+export default Royalsalutecampaigns;
