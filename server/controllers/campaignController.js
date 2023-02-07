@@ -28,6 +28,15 @@ const getBacardi = async (req, res) => {
         .json(bacardi)
 }
 
+//Campari
+const getCampari = async (req, res) => {
+
+    const campari = await Campaign.find({ client: 'Campari' })
+
+    res.status(200)
+        .json(campari)
+}
+
 //Goslings
 const getGoslings = async (req, res) => {
 
@@ -41,5 +50,6 @@ module.exports = {
     getCampaign,
     getCampaigns,
     getGoslings,
+    getCampari,
     getBacardi,
 }
